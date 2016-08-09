@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var morgan = require('morgan');
 // var usersRouter = require('./routes/users.js');
-var wikiRouter = require('./routes/wiki.js');
+var router = require('./routes/index.js');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 var models = require('./models');
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(filePath));
 
-app.use('/wiki', wikiRouter);
+app.use(router);
 
 
 // ... other stuff
